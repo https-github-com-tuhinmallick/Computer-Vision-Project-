@@ -1,8 +1,8 @@
 
 
-### By [Soroosh Tayebi Arasteh](https://github.com/starasteh) and Amin Heydarshahi
+### By [Tuhin Mallick](https://github.com/tuhinmallick) and Dev Darshan
 
-[![](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/starasteh/cv_course/pulls)
+[![](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tuhinmallick/Computer-Vision-Project-/pulls)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 This project contains the programming exercises of the *Computer Vision* course (SS 2020) offered by the [Pattern Recognition Lab (LME)](https://lme.tf.fau.de/) of the [Computer Science Department](https://www.informatik.uni-erlangen.de/) at [University of Erlangen-Nuremberg (FAU)](https://www.fau.eu/).
