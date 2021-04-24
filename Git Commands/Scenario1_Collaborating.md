@@ -1,4 +1,4 @@
-Once you have been added as a collaborator by one of the team members, all you have to do is go to the Git bash or Mac terminal, do a cd Desktop or cd Downloads depending on whether you want to create this local repo on your Desktop or Downloads folder and then do:
+https://github.com/tuhinmallick/Computer-Vision-Project-Once you have been added as a collaborator by one of the team members, all you have to do is go to the Git bash or Mac terminal, do a cd Desktop or cd Downloads depending on whether you want to create this local repo on your Desktop or Downloads folder and then do:
 
 git clone https://github.com/tuhinmallick/Computer-Vision-Project-
 
