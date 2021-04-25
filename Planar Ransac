@@ -1,0 +1,13 @@
+#importing the libraries
+
+import numpy as np
+from matplotlib import pylab as plt
+from scipy import io
+import random
+from scipy.ndimage import gaussian_filter
+from skimage.feature import canny
+from skimage import filters
+from scipy.ndimage import morphology
+import skimage
+
+
