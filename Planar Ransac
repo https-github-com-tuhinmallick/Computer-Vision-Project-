@@ -10,4 +10,15 @@ from skimage import filters
 from scipy.ndimage import morphology
 import skimage
 
+#function to visualise the images using Plotly
+def visualize(img, name='', cmap=None):
+    #to show the image
+    plt.imshow(img, cmap=cmap)
+    #To show the title of the image 
+    plt.title(name)
+    #To show the plot
+    plt.show()
+
+
+
 
