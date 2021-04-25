@@ -32,6 +32,16 @@ def vis_scatter(img, name=''):
     #To show the plot
     plt.show()
 
+#Function to apply Gausian Filter
+def gauss_canny(image):
+    # blur it slightly to remove high frequency noise, and apply edge detection
+    gauss = gaussian_filter(image, sigma=1)
+    edged = canny(gauss)
+    plt.imshow(edged, cmap='gray')
+    plt.show()
+    return edged
+
+
 
 
 
