@@ -13,6 +13,7 @@ import skimage
 #function to visualise the images using Plotly
 def visualize(img, name='', cmap=None):
     #to show the image
+    #The Colormap instance or registered colormap name used to map scalar data to colors. This parameter is ignored for RGB(A) data. Defaults to rcParams["image.cmap"] = 'viridis'.
     plt.imshow(img, cmap=cmap)
     #To show the title of the image 
     plt.title(name)
