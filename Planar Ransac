@@ -19,6 +19,20 @@ def visualize(img, name='', cmap=None):
     #To show the plot
     plt.show()
 
+#Function to show the Point-cloud scatter
+def vis_scatter(img, name=''):
+    
+    fig = plt.figure()
+    #Adding the subplot of point cloud
+    ax = fig.add_subplot(projection='3d')
+    #To plot the scatter graph 
+    ax.scatter(img[:, :, 0], img[:, :, 1], img[:, :, 2])
+    #To show the title of the image 
+    plt.title(name)
+    #To show the plot
+    plt.show()
+
+
 
 
 
