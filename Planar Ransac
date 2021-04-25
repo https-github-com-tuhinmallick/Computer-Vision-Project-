@@ -36,7 +36,11 @@ def vis_scatter(img, name=''):
 #Function to apply Gausian Filter
 def gauss_canny(image):
     # blur it slightly to remove high frequency noise, and apply edge detection
+    #The multidimensional filter is implemented as a sequence of 1-D convolution filters. The intermediate arrays are stored in the same data type as the output. Therefore, for output types with a limited precision, the results may be imprecise because intermediate results may be stored with insufficient precision.
+    #sigma= Standard deviation for Gaussian kernel.
+    #image = The input array.
     gauss = gaussian_filter(image, sigma=1)
+
     edged = canny(gauss)
     plt.imshow(edged, cmap='gray')
     plt.show()
