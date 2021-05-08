@@ -113,6 +113,18 @@ def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np
     Returns:
         A boolean image with edge pixels set to True.
     """
+    
+    for x, y in zip(range(response.shape[0]), range(response.shape[1])):
+
+        minima_x = argrelextrema(response[:, y], np.less)
+
+        minima_y = argrelextrema(response[x], np.less)
+
+        result[minima_x, x] =  (0, 0, 255)
+
+        result[y, minima_y] =  (0, 0, 255)
+        
+        
     # Step 1 (recommended) : pad the response image to facilitate vectorization (1 line)
     R = np.pad(R, ((1, 1), (1, 1)), mode='constant', constant_values=0)
 
