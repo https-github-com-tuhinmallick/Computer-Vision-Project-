@@ -142,4 +142,4 @@ def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np
 
     raise NotImplementedError
     
-    
+    https://github.com/aartighatkesar/Harris-Corner-Detector/blob/master/detect_harris_corners.py
