@@ -74,6 +74,15 @@ def detect_corners(R: np.array, threshold: float = 0.1) -> Tuple[np.array, np.ar
     Returns:
         A tuple of two 1D integer arrays containing the x and y coordinates of key-points in the image.
     """
+    points = []
+
+    maxima = peak_local_max(response, min_distance=1, threshold_abs=threshold)
+
+    for maximum in maxima:
+
+        points.append(cv2.KeyPoint(maximum[1], maximum[0], 1))
+
+    return points
     # Step 1 (recommended) : pad the response image to facilitate vectorization (1 line)
     R =np.pad(R, ((1, 1), (1, 1)), mode='constant', constant_values=0)
 
