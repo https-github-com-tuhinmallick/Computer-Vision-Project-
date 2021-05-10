@@ -58,6 +58,8 @@ def compute_harris_response(I: np.array, k: float = 0.06) -> Tuple[np.array]:
     dbg = (response - np.min(response)) / (np.max(response) - np.min(response))
     dbg = dbg.astype(np.float32)
     cv2.imshow("Harris Response", dbg, 0, 2)
+    
+    return R, A, B, C, Idx, Idy
 
     raise NotImplementedError
 
@@ -74,6 +76,7 @@ def detect_corners(R: np.array, threshold: float = 0.1) -> Tuple[np.array, np.ar
     Returns:
         A tuple of two 1D integer arrays containing the x and y coordinates of key-points in the image.
     """
+    """
     points = []
 
     maxima = peak_local_max(response, min_distance=1, threshold_abs=threshold)
@@ -83,23 +86,26 @@ def detect_corners(R: np.array, threshold: float = 0.1) -> Tuple[np.array, np.ar
         points.append(cv2.KeyPoint(maximum[1], maximum[0], 1))
 
     return points
+    """
     # Step 1 (recommended) : pad the response image to facilitate vectorization (1 line)
     R =np.pad(R, ((1, 1), (1, 1)), mode='constant', constant_values=0)
 
     # Step 2 (recommended) : create one image for every offset in the 3x3 neighborhood (6 lines).
-
+    offs eted_response=np.zeros([1+R[0]+
 
     # Step 3 (recommended) : compute the greatest neighbor of every pixel (1 line)
     maxima = peak_local_max(R, min_distance=1, threshold_abs=threshold)
 
     # Step 4 (recommended) : Compute a boolean image with only all key-points set to True (1 line)
-    B = np.where(points<=threshold, True, False )
+    B = np.where(maxima > threshold, True, False)
 
     # Step 5 (recommended) : Use np.nonzero to compute the locations of the key-points from the boolean image (1 line)
-    np.nonzero(B!=0) 
- 
-    raise NotImplementedError
+    point_x, point_y = tuple(map(tuple, np.nonzero(B!=0))) 
     
+                                 
+    return point_x, point_y
+    raise NotImplementedError
+    """
     def find_nearest_white(img, target):
 
     nonzero = np.argwhere(img == 255)
@@ -109,6 +115,7 @@ def detect_corners(R: np.array, threshold: float = 0.1) -> Tuple[np.array, np.ar
     nearest_index = np.argmin(distances)
 
     return nonzero[nearest_index
+    """
 
 
 def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np.array:
