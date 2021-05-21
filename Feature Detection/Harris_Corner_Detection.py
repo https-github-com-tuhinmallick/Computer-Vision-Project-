@@ -149,15 +149,14 @@ def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np
     response = np.where(R > edge_threshold, np.inf, R)
 
     # Step 3 (recommended) : create two images with the smaller x-axis and y-axis neighbors respectively (2 lines).
-    minima_x = argrelextrema(response[:, y], np.less)
-
-    minima_y = argrelextrema(response[x], np.less)
+    minima_x= np.minimum(np.minimum(R[1:-1,:-2],R[1:-1,1:-1],R[1:-1,2:])
+    minima_y= np.minimum(np.minimum(R[:-2,1:-1],R[1:-1,1:-1],R[2:,1:-1])
 
     # Step 4 (recommended) : Calculate pixels that are lower than either their x-axis or y-axis neighbors (1 line)
-    result[minima_x, x] =  (0, 0, 255)
+    result=np.logical_or(R<=minima_y, R<=minima_x)
 
     # Step 5 (recommended) : Calculate valid edge pixels by combining significant and axis_minimal pixels (1 line)
-
+    valid=no.logical_and(result,response)
 
     raise NotImplementedError
     
