@@ -158,6 +158,7 @@ def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np
     # Step 5 (recommended) : Calculate valid edge pixels by combining significant and axis_minimal pixels (1 line)
     valid=no.logical_and(result,response)
 
+    return valid
     raise NotImplementedError
     
-    https://github.com/aartighatkesar/Harris-Corner-Detector/blob/master/detect_harris_corners.py
+    
