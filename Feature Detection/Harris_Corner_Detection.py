@@ -91,7 +91,7 @@ def detect_corners(R: np.array, threshold: float = 0.1) -> Tuple[np.array, np.ar
     R =np.pad(R, ((1, 1), (1, 1)), mode='constant', constant_values=0)
 
     # Step 2 (recommended) : create one image for every offset in the 3x3 neighborhood (6 lines).
-    offs eted_response=np.zeros([1+R[0]+
+    
 
     # Step 3 (recommended) : compute the greatest neighbor of every pixel (1 line)
     maxima = peak_local_max(R, min_distance=1, threshold_abs=threshold)
