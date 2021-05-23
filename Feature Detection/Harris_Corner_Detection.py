@@ -114,18 +114,7 @@ def detect_corners(R: np.array, threshold: float = 0.1) -> Tuple[np.array, np.ar
                                  
     return point_x, point_y
     raise NotImplementedError
-    """
-    def find_nearest_white(img, target):
-
-    nonzero = np.argwhere(img == 255)
-
-    distances = np.sqrt((nonzero[:,0] - TARGET[0]) ** 2 + (nonzero[:,1] - TARGET[1]) ** 2)
-
-    nearest_index = np.argmin(distances)
-
-    return nonzero[nearest_index
-    """
-
+    
 
 def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np.array:
     """Computes a boolean image where edge pixels are set to True.
