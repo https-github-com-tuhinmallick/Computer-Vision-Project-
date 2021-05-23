@@ -96,10 +96,10 @@ def detect_corners(R: np.array, threshold: float = 0.1) -> Tuple[np.array, np.ar
     C = np.array([0, 1, 2, 0, 2, 0, 1, 2])
     D = np.array([-2, -1, R.shape[1], -2, R.shape[1], -2, -1, R.shape[1]])
 
-    list = []
+    points = []
 
     for y_s, y_f, x_s, x_f in zip(a, b, c, d):
-        list.append(R_pad[y_s:y_f, x_s:x_f])
+        points.append(R[y_s:y_f, x_s:x_f])
 
     list = np.array(list)
     # Step 3 (recommended) : compute the greatest neighbor of every pixel (1 line)
