@@ -138,17 +138,7 @@ def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np
 
     Returns:
         A boolean image with edge pixels set to True.
-    """
-    
-    for x, y in zip(range(response.shape[0]), range(response.shape[1])):
-
-        minima_x = argrelextrema(response[:, y], np.less)
-
-        minima_y = argrelextrema(response[x], np.less)
-
-        result[minima_x, x] =  (0, 0, 255)
-
-        result[y, minima_y] =  (0, 0, 255)
+    ""
         
         
     # Step 1 (recommended) : pad the response image to facilitate vectorization (1 line)
@@ -165,7 +155,7 @@ def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np
     result=np.logical_or(R<=minima_y, R<=minima_x)
 
     # Step 5 (recommended) : Calculate valid edge pixels by combining significant and axis_minimal pixels (1 line)
-    valid=no.logical_and(result,response)
+    valid=np.logical_and(result,response)
 
     return valid
     raise NotImplementedError
