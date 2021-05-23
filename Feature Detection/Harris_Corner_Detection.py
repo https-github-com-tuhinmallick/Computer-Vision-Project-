@@ -155,9 +155,9 @@ def detect_edges(R: np.array, edge_threshold: float = -0.01, epsilon=-.01) -> np
     result=np.logical_or(R<=minima_y, R<=minima_x)
 
     # Step 5 (recommended) : Calculate valid edge pixels by combining significant and axis_minimal pixels (1 line)
-    valid=np.logical_and(result,response)
+    edge=np.logical_and(result,response)
 
-    return valid
+    return edge
     raise NotImplementedError
     
     
