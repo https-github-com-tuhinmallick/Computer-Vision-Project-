@@ -103,10 +103,10 @@ def detect_corners(R: np.array, threshold: float = 0.1) -> Tuple[np.array, np.ar
 
     list = np.array(list)
     # Step 3 (recommended) : compute the greatest neighbor of every pixel (1 line)
-    maxima = peak_local_max(R, min_distance=1, threshold_abs=threshold)
+    maxima = np.max(points,axis=0)
 
     # Step 4 (recommended) : Compute a boolean image with only all key-points set to True (1 line)
-    B = np.where(maxima > threshold, True, False)
+    B = np.logical_and(maxima > threshold, )
 
     # Step 5 (recommended) : Use np.nonzero to compute the locations of the key-points from the boolean image (1 line)
     point_x, point_y = tuple(map(tuple, np.nonzero(B!=0))) 
